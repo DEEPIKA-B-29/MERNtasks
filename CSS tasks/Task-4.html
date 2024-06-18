@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS TASK-4</title>
+    <style>
+      .sidehoverbar div {
+        position: relative;
+        margin-left: 12px;
+        padding: 10px;
+        border-radius: 0px 6px 6px 0px;
+        left: -12px;
+        transition: 0.7s;
+      }
+      .sidehoverbar div:hover {
+        opacity: 1;
+        width: 200px;
+        left: -12px;
+      }
+      .first {
+        cursor: pointer;
+        background-color: rgb(6, 167, 142);
+        top: 22px;
+        width: 32px;
+        height: 35px;
+      }
+      .second {
+        cursor: pointer;
+        background-color: rgb(8, 148, 236);
+        top: 30px;
+        width: 32px;
+        height: 35px;
+      }
+
+      .third {
+        cursor: pointer;
+        background-color: rgb(218, 46, 46);
+        top: 38px;
+        width: 32px;
+        height: 35px;
+      }
+      .fourth {
+        cursor: pointer;
+        background-color: rgb(65, 64, 64);
+        top: 46px;
+        width: 32px;
+        height: 35px;
+      }
+      .hoverable-topic {
+        position: relative;
+        top: -220px;
+        left: 110px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidehoverbar">
+        <div class="first"><a href="#"></a></div>
+        <div class="second"><a href="#"></a></div>
+        <div class="third"><a href="#"></a></div>
+        <div class="fourth"><a href="#"></a></div>
+      </div>
+      <div class="hoverable-topic">
+        <h2>Hoverable Sidenav Buttons</h2>
+        <p>Hover over the buttons in the left side navigation to open them.</p>
+      </div>
+    </div>
+  </body>
+</html>

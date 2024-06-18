@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS TASK-2</title>
+    <style>
+      body {
+        display: flex;
+        padding: 15px;
+        justify-content: space-around;
+        margin: 0;
+      }
+      .vertical {
+        width: 200px;
+        border: 1px solid black;
+        padding: 12px;
+      }
+      .vertical h2 {
+        margin: 10px;
+        text-align: center;
+        background-color: #d2d2d2;
+        padding: 10px;
+      }
+      .vertical a {
+        display: block;
+        color: blue;
+        background-color: #bfefef;
+        padding: 10px;
+        text-decoration: none;
+      }
+      .vertical a:hover {
+        background-color: orange;
+        color: white;
+      }
+      .horizontal {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100px;
+        padding: 10px;
+      }
+      .horizontal h2 {
+        margin: 0 0 10px;
+        text-align: center;
+        background-color: #f0f0f0;
+        padding: 10px;
+        width: 100%;
+      }
+      .horizontal div {
+        display: flex;
+        width: 100%;
+      }
+      .horizontal a {
+        color: blue;
+        background-color: #d2cccc;
+        padding: 14px 20px;
+        text-decoration: none;
+        border-right: 1px solid white;
+        display: block;
+      }
+      .horizontal a:hover {
+        background-color: gray;
+        color: white;
+      }
+      .horizontal a:first-child {
+        background-color: gray;
+        color: white;
+        font-weight: bold;
+      }
+      .horizontal a:last-child {
+        border-right: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical">
+      <h2>Vertical Navigation Bar</h2>
+      <a href="#" style="background-color: orange; font-weight: bold">Home</a>
+      <a href="#">Java</a>
+      <a href="#">CSS</a>
+      <a href="#">HTML</a>
+      <a href="#">Bootstrap</a>
+    </div>
+    <div class="horizontal">
+      <h2>Horizontal Navigation Bar</h2>
+      <div>
+        <a href="#">Home</a>
+        <a href="#">Java</a>
+        <a href="#">HTML</a>
+        <a href="#">CSS</a>
+      </div>
+    </div>
+  </body>
+</html>
