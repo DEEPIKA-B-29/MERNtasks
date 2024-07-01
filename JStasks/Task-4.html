@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-4</title>
+  </head>
+  <body>
+    <h1>Show Time and Date</h1>
+
+    <button onclick="showDate()">Show Date</button>
+    <p id="dateDisplay"></p>
+    <br />
+
+    <button onclick="showTime()">Show Time</button>
+    <p id="timeDisplay"></p>
+
+    <script>
+      function showDate() {
+        const now = new Date();
+        const day = now.getDate().toString();
+        const monthIndex = now.getMonth();
+        const year = now.getFullYear();
+
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const month = monthNames[monthIndex];
+
+        const dateString = `${day}/${month}/${year}`;
+        document.getElementById("dateDisplay").innerText = `${dateString}`;
+      }
+
+      function showTime() {
+        const now = new Date();
+        const dayOfWeek = getDayOfWeek(now.getDay());
+        const day = now.getDate().toString().padStart(2, "0");
+        const month = now.getMonth();
+        const year = now.getFullYear();
+        const timeString = now.toLocaleTimeString();
+        const monthNames = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        const month1 = monthNames[month];
+
+        const dateTimeString = `${dayOfWeek} ${month1} ${day}  ${year} ${timeString}`;
+        document.getElementById("timeDisplay").innerText = `${dateTimeString}`;
+      }
+
+      function getDayOfWeek(dayIndex) {
+        const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        return daysOfWeek[dayIndex];
+      }
+    </script>
+  </body>
+</html>

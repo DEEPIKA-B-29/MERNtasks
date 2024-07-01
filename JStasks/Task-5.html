@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-5</title>
+    <style>
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+      .error-input {
+        border: 1px solid red;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 35px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Registration</h2>
+
+    <label for="n1">Name:</label>
+    <input type="text" id="n1" oninput="removeError('errname')" />
+    <span id="errname" class="error"></span>
+    <br /><br />
+
+    <label for="n2">Email:</label>
+    <input type="email" id="n2" oninput="removeError('erremail')" />
+    <span id="erremail" class="error"></span>
+    <br /><br />
+
+    <label for="n3">Website:</label>
+    <input type="url" id="n3" oninput="removeError('errwebsite')" />
+    <span id="errwebsite" class="error"></span>
+    <br /><br />
+
+    <label for="n4">Message:</label>
+    <textarea id="n4" oninput="removeError('errmsg')"></textarea>
+    <span id="errmsg" class="error"></span>
+    <br /><br />
+
+    <button onclick="submitForm()">Submit</button>
+
+    <script>
+      function submitForm() {
+        if (validateForm()) {
+          alert("Form submitted successfully!");
+          resetInputStyles();
+        }
+      }
+
+      function validateForm() {
+        var name = document.getElementById("n1").value;
+        var email = document.getElementById("n2").value;
+        var website = document.getElementById("n3").value;
+        var msg = document.getElementById("n4").value;
+
+        var isValid = true;
+        resetErrors();
+
+        if (name.trim() === "") {
+          document.getElementById("errname").innerText =
+            "This field is required";
+          addError("n1");
+          isValid = false;
+        }
+
+        if (email.trim() === "") {
+          document.getElementById("erremail").innerText =
+            "A valid Email address is required";
+          addError("n2");
+          isValid = false;
+        } else if (email.indexOf("@") === -1) {
+          document.getElementById("erremail").innerText =
+            "Invalid email format";
+          addError("n2");
+          isValid = false;
+        }
+
+        if (website.trim() === "") {
+          document.getElementById("errwebsite").innerText =
+            "A valid URL is required";
+          addError("n3");
+          isValid = false;
+        } else if (website.indexOf(".") === -1) {
+          document.getElementById("errwebsite").innerText =
+            "Invalid URL format";
+          addError("n3");
+          isValid = false;
+        }
+
+        if (msg.trim() === "") {
+          document.getElementById("errmsg").innerText =
+            "This field is required";
+          addError("n4");
+          isValid = false;
+        }
+
+        return isValid;
+      }
+
+      function addError(elementId) {
+        document.getElementById(elementId).classList.add("error-input");
+      }
+
+      function removeError(elementId) {
+        document.getElementById(elementId).innerText = "";
+        document.getElementById(elementId).classList.remove("error-input");
+      }
+
+      function resetErrors() {
+        document.querySelectorAll(".error").forEach(function (element) {
+          element.innerText = "";
+        });
+      }
+
+      function resetInputStyles() {
+        document.querySelectorAll("input, textarea").forEach(function (input) {
+          input.classList.remove("error-input");
+        });
+      }
+    </script>
+  </body>
+</html>
